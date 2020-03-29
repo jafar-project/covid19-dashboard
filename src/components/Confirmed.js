@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
 import Card from "shared/Card";
 import DataContext from "helpers/DataContext";
-import "components/Summary.scss";
+import Loading from "shared/Loading";
+import "components/components.scss";
 
 const Confirmed = props => {
   const { covidCase, newCovidCase } = useContext(DataContext);
   return (
     <Card title="Confirmed">
       <div className="number-case">
-        {covidCase.confirmed.toLocaleString("id")}
+        {covidCase ? covidCase.confirmed.toLocaleString("id") : <Loading />}
       </div>
       <div className="case-addition bad">
-        {newCovidCase.confirmed.toLocaleString("id")} new case confirmed
+        {newCovidCase ? `${newCovidCase.confirmed.toLocaleString("id")} new case confirmed` : <Loading/>}
       </div>
     </Card>
   );

@@ -7,6 +7,7 @@ const DataProvider = props => {
   const [series, setSeries] = useState(null);
   const [covidCase, setCovidCase] = useState(null);
   const [newCase, setNewCase] = useState(null);
+  const [country, setNewCountry] = useState(null);
 
   const setGlobal = data =>
     data.reduce((sum, current) => {
@@ -28,7 +29,7 @@ const DataProvider = props => {
       .then(data => {
         region !== "Global"
           ? setSeries(data[region])
-          : setSeries(setGlobal(Object.values(data)));
+          : setSeries(setGlobal(Object.values(data))); setNewCountry(Object.keys(data));
       });
   };
 
@@ -42,19 +43,21 @@ const DataProvider = props => {
   };
 
   useEffect(() => {
-    getData("Global");
+    getData("Indonesia");
   }, []);
 
   useEffect(() => {
     series && update(series.slice(-2));
   }, [series]);
 
-  return covidCase && newCase && (
+  return  (
     <DataContext.Provider
       value={{
         series: series,
         covidCase: covidCase,
-        newCovidCase: newCase
+        newCovidCase: newCase,
+        country : country,
+        getData : getData
       }}
     >
       {props.children}

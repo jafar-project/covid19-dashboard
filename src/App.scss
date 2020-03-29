@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-view { 
+  min-width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 250px 400px;
+  grid-template-areas: 
+  "rate       confirmed  recovered  death"
+  "line-chart line-chart line-chart pie-chart ";
+
+  #rate {
+    grid-area: rate;
+  }
+
+  #confirmed {
+    grid-area: confirmed;
+  }
+
+  #recovered {
+    grid-area: recovered;
+  }
+
+  #death { 
+    grid-area: death;
+  }
+
+  #pie-chart {
+    grid-area: pie-chart;
+  }
+
+  #line-chart {
+    grid-area: line-chart;
+  }
+}
