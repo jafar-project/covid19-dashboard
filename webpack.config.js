@@ -33,16 +33,4 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public')
   },
-  optimization: {
-    minimize: true,
-		splitChunks: {
-			cacheGroups: {
-				commons: {
-					test: /[\\/]node_modules[\\/]/,
-					name: 'vendors',
-					chunks: 'all'
-				}
-			}
-		}
-	}
 };
