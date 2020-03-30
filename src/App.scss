@@ -4,13 +4,13 @@
 }
 
 .grid-view { 
-  min-width: 1280px;
+  width: 1080px;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   grid-template-rows: 250px 400px;
   grid-template-areas: 
   "rate       confirmed  recovered  death"
-  "line-chart line-chart line-chart pie-chart ";
+  "pie-chart line-chart line-chart line-chart ";
 
   #rate {
     grid-area: rate;
