@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  devtool: 'hidden-source-map',
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'public'),

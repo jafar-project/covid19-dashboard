@@ -36,3 +36,29 @@
     grid-area: line-chart;
   }
 }
+
+@media screen and (max-width: 1080px) {
+  .grid-view { 
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 250px 250px 400px 400px;
+    grid-template-areas: 
+    "rate       confirmed"
+    "recovered  death"
+    "pie-chart  pie-chart"
+    "line-chart line-chart";
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .grid-view { 
+    grid-template-columns: 100%;
+    grid-template-rows: 250px 200px  200px 200px 400px 400px;
+    grid-template-areas: 
+    "rate       "
+    "confirmed"
+    "recovered  "
+    "death"
+    "pie-chart  "
+    "line-chart";
+  }
+}

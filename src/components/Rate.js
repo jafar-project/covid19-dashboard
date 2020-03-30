@@ -5,9 +5,9 @@ import DataContext from "helpers/DataContext";
 import "components/components.scss";
 
 const Rate = () => {
-  const { covidCase } = useContext(DataContext);
+  const { covidCase, region } = useContext(DataContext);
   return (
-    <Card title="Rate">
+    <Card title={region}>
       <div className="rate-title bad">Death Rate</div>
       <div className="rate-data">
         {covidCase ? `${((covidCase.deaths / covidCase.confirmed) * 100).toFixed(2)} %` : <Loading/>}

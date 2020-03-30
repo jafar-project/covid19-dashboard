@@ -23,12 +23,14 @@ const LineChart = () => {
                 lineTension: 0,
                 label: "Confirmed",
                 borderColor: "#F7B32B",
+                pointRadius:0
               },
               {
                 data: goodData.map(covid => covid.deaths),
                 lineTension: 0,
                 label: "Deaths",
                 borderColor: "#E83F6F",
+                pointRadius: 0
               }
             ]
           },

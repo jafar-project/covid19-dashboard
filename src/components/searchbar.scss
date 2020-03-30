@@ -1,7 +1,6 @@
 .search-bar-wrapper {
   display: flex;
-  background-color: #000;
-  width: 100%;
+  background-color: #4b4b4b;
   padding: 10px;
   justify-content: center;
   align-items: center;
@@ -17,10 +16,8 @@
     padding: 5px 10px;
     font-size: 1.25em;
     letter-spacing: 0.05em;
-    border-radius: 5px 0 0 0 ;
   }
   button {
-    border-radius: 0 5px 0 0;
     background-color: #fff;
     color: #555;
   }
