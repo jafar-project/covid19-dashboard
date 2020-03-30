@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  devtool: 'hidden-source-map',
+  mode: 'production',
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'public'),
@@ -20,7 +20,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: '',
   resolve: {
     alias: {
         components: path.resolve(__dirname, 'src/components'),
@@ -32,5 +32,17 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'public')
-  }
+  },
+  optimization: {
+    minimize: true,
+		splitChunks: {
+			cacheGroups: {
+				commons: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					chunks: 'all'
+				}
+			}
+		}
+	}
 };
