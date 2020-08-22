@@ -12,7 +12,7 @@ const Recovered = props => {
         {covidCase ? covidCase.recovered.toLocaleString("id") : <Loading />}
       </div>
       <div className="case-addition good">
-        {newCovidCase ? `${newCovidCase.recovered.toLocaleString("id")} new case recovered` : <Loading />}
+        {newCovidCase ? `+${newCovidCase.recovered.toLocaleString("id")}` : <Loading />}
       </div>
     </Card>
   );

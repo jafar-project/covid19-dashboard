@@ -12,7 +12,7 @@ const Confirmed = props => {
         {covidCase ? covidCase.confirmed.toLocaleString("id") : <Loading />}
       </div>
       <div className="case-addition bad">
-        {newCovidCase ? `${newCovidCase.confirmed.toLocaleString("id")} new case confirmed` : <Loading/>}
+        {newCovidCase ? `+${newCovidCase.confirmed.toLocaleString("id")}` : <Loading/>}
       </div>
     </Card>
   );

@@ -12,7 +12,7 @@ const Death = props => {
         {covidCase ? covidCase.deaths.toLocaleString("id") : <Loading/>}
       </div>
       <div className="case-addition bad">
-        {newCovidCase ? `${newCovidCase.deaths.toLocaleString("id")} new deaths confirmed` : <Loading/>}
+        {newCovidCase ? `+${newCovidCase.deaths.toLocaleString("id")}` : <Loading/>}
       </div>
     </Card>
   );
